@@ -17,11 +17,15 @@ export const FeedbackHeader: React.FC = () => {
       p={4}
       borderRadius="lg"
       justify="space-between"
-      align="center"
+      flexDirection={{ base: "column", sm: "row" }}
       mb={6}
     >
-      <Flex align="center" gap={4}>
-        <Text color="white" fontWeight="medium">
+      <Flex align="start" gap={4} alignItems={"center"} justify={"start"}>
+        <Text
+          color="white"
+          fontWeight="medium"
+          fontSize={{ base: "sm", sm: "lg" }}
+        >
           6 Suggestions
         </Text>
         <Select
@@ -37,7 +41,13 @@ export const FeedbackHeader: React.FC = () => {
           <option value="newest">Newest</option>
         </Select>
       </Flex>
-      <Button leftIcon={<AddIcon />} colorScheme="purple" size="sm" px={6}>
+      <Button
+        leftIcon={<AddIcon />}
+        colorScheme="purple"
+        size="sm"
+        px={6}
+        mt={{ base: 4, sm: 0 }}
+      >
         Add Feedback
       </Button>
     </Flex>

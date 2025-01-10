@@ -4,7 +4,7 @@ export interface Feedback {
   description: string;
   upvotes: number;
   tags: string[];
-  type: "Enhancement" | "Feature" | "Bug";
+  type: "Enhancement" | "Feature" | "Bug" | "UI";
 }
 
 export interface RoadmapItem {

@@ -9,7 +9,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-export const Sidebar: React.FC = () => {
+interface SidebarProps {
+  selectedTag: string;
+  onTagSelect: (tag: string) => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({
+  selectedTag,
+  onTagSelect,
+}) => {
   const cardBg = useColorModeValue("white", "gray.800");
   const tags = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
   const roadmapItems: RoadmapItem[] = [
@@ -36,8 +44,10 @@ export const Sidebar: React.FC = () => {
             <Tag
               key={tag}
               size="lg"
-              variant={tag === "All" ? "solid" : "outline"}
-              colorScheme={tag === "All" ? "blue" : "gray"}
+              variant={selectedTag === tag ? "solid" : "outline"}
+              colorScheme={selectedTag === tag ? "blue" : "gray"}
+              bg={selectedTag === tag ? "#4661E6" : "white"}
+              onClick={() => onTagSelect(tag)}
               cursor="pointer"
               _hover={{ opacity: 0.8 }}
             >

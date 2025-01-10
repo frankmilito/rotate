@@ -39,16 +39,29 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
         _hover={{ bg: useColorModeValue("gray.200", "gray.600") }}
       >
         <ChevronUpIcon />
-        <Text fontWeight="bold" color={textColor}>
+        <Text
+          fontWeight="bold"
+          color={textColor}
+          fontSize={{ base: "sm", sm: "lg" }}
+        >
           {feedback.upvotes}
         </Text>
       </Button>
 
       <Box flex={1}>
-        <Text fontSize="lg" fontWeight="semibold" mb={2} color={textColor}>
+        <Text
+          fontSize={{ base: "sm", sm: "lg" }}
+          fontWeight="semibold"
+          mb={2}
+          color={textColor}
+        >
           {feedback.title}
         </Text>
-        <Text color={descriptionColor} mb={4}>
+        <Text
+          color={descriptionColor}
+          mb={4}
+          fontSize={{ base: "sm", sm: "md" }}
+        >
           {feedback.description}
         </Text>
         <Tag
