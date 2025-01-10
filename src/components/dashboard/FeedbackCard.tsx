@@ -33,8 +33,8 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
       <Button
         display="flex"
         flexDir="column"
-        h="auto"
-        py={2}
+        // h="auto"
+        py={8}
         bg={upvoteBg}
         _hover={{ bg: useColorModeValue("gray.200", "gray.600") }}
       >
@@ -65,13 +65,10 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
           {feedback.description}
         </Text>
         <Tag
-          colorScheme={
-            feedback.type === "Enhancement"
-              ? "purple"
-              : feedback.type === "Feature"
-              ? "blue"
-              : "red"
-          }
+          fontWeight="bold"
+          p="3"
+          color={feedback.type !== "UI" ? "primary.500" : "red"}
+          bg="primary.100"
         >
           {feedback.type}
         </Tag>

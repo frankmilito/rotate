@@ -35,6 +35,14 @@ export const colors = {
     800: "#243b53",
     900: "#102a43",
   },
+  primary: {
+    50: "#e3f8ff",
+    100: "#F2F4FF",
+    200: "#81defd",
+    300: "#5ed0fa",
+    400: "#40c3f7",
+    500: "#4661E6",
+  },
 };
 
 export const theme = extendTheme({

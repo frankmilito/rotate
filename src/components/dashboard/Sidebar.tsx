@@ -19,7 +19,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onTagSelect,
 }) => {
   const cardBg = useColorModeValue("white", "gray.800");
+  const tagBg = useColorModeValue("primary.500", "primary.500");
+  const tagColor = useColorModeValue("white", "white");
   const tags = ["All", "UI", "UX", "Enhancement", "Bug", "Feature"];
+
   const roadmapItems: RoadmapItem[] = [
     { status: "Planned", count: 2, color: "orange" },
     { status: "In-Progress", count: 3, color: "purple" },
@@ -45,8 +48,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
               key={tag}
               size="lg"
               variant={selectedTag === tag ? "solid" : "outline"}
-              colorScheme={selectedTag === tag ? "blue" : "gray"}
-              bg={selectedTag === tag ? "#4661E6" : "white"}
+              color={selectedTag === tag ? tagColor : "gray"}
+              bg={selectedTag === tag ? tagBg : "white"}
               onClick={() => onTagSelect(tag)}
               cursor="pointer"
               _hover={{ opacity: 0.8 }}

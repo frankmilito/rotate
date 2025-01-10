@@ -7,9 +7,23 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
+import { SortOption } from "@/types";
 
-export const FeedbackHeader: React.FC = () => {
+interface FeedbackHeaderProps {
+  feedbackCount: number;
+  sortBy: SortOption;
+  onSortChange: (value: SortOption) => void;
+}
+
+export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
+  feedbackCount,
+  sortBy,
+  onSortChange,
+}) => {
   const bgColor = useColorModeValue("navy.800", "navy.900");
+  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    onSortChange(event.target.value as SortOption);
+  };
 
   return (
     <Flex
@@ -26,10 +40,11 @@ export const FeedbackHeader: React.FC = () => {
           fontWeight="medium"
           fontSize={{ base: "sm", sm: "lg" }}
         >
-          6 Suggestions
+          {feedbackCount} {feedbackCount === 1 ? "Suggestion" : "Suggestions"}
         </Text>
         <Select
-          placeholder="Sort by: Most Upvotes"
+          value={sortBy}
+          onChange={handleSortChange}
           size="sm"
           width="200px"
           color="white"
@@ -38,7 +53,6 @@ export const FeedbackHeader: React.FC = () => {
         >
           <option value="most-upvotes">Most Upvotes</option>
           <option value="least-upvotes">Least Upvotes</option>
-          <option value="newest">Newest</option>
         </Select>
       </Flex>
       <Button
