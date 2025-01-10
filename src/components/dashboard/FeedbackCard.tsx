@@ -33,8 +33,7 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
       <Button
         display="flex"
         flexDir="column"
-        // h="auto"
-        py={8}
+        py={{ base: 6, sm: 8 }}
         bg={upvoteBg}
         _hover={{ bg: useColorModeValue("gray.200", "gray.600") }}
       >
