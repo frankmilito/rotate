@@ -5,6 +5,7 @@ export interface Feedback {
   upvotes: number;
   tags: string[];
   type: "Enhancement" | "Feature" | "Bug" | "UI";
+  comment: number;
 }
 
 export interface RoadmapItem {

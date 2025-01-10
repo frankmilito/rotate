@@ -15,6 +15,7 @@ const feedbackList: Feedback[] = [
     upvotes: 112,
     tags: ["Enhancement"],
     type: "Enhancement",
+    comment: 3,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const feedbackList: Feedback[] = [
     upvotes: 99,
     tags: ["Feature"],
     type: "Feature",
+    comment: 5,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const feedbackList: Feedback[] = [
     upvotes: 65,
     tags: ["Feature"],
     type: "Feature",
+    comment: 1,
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const feedbackList: Feedback[] = [
     upvotes: 51,
     tags: ["UI"],
     type: "UI",
+    comment: 2,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const feedbackList: Feedback[] = [
     upvotes: 42,
     tags: ["Feature"],
     type: "Feature",
+    comment: 3,
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const feedbackList: Feedback[] = [
     upvotes: 3,
     tags: ["Bug"],
     type: "Bug",
+    comment: 4,
   },
 ];
 

@@ -21,7 +21,7 @@ export const colors = {
     600: "#7c3aed",
     700: "#6d28d9",
     800: "#5b21b6",
-    900: "#4c1d95",
+    900: "#AD1FEA",
   },
   navy: {
     50: "#f0f4f8",

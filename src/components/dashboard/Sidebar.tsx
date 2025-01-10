@@ -30,13 +30,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <VStack spacing={4} align="stretch">
       <Box
-        p={6}
+        p={4}
+        px={6}
         borderRadius="lg"
-        bgGradient="linear(to-r, purple.400, pink.500)"
+        // bgGradient="linear(to-r, purple.400, pink.500)"
+        backgroundImage="url('/Oval.svg')"
+        backgroundRepeat={"no-repeat"}
+        backgroundSize={"cover"}
         color="white"
+        display="flex"
+        alignItems="start"
+        flexDirection={"column"}
+        justifyContent={"end"}
+        w="100%" // Width
+        h={{ base: "100px", sm: "150px" }} // Height
       >
-        <Heading size="md">Frontend Mentor</Heading>
-        <Text>Feedback Board</Text>
+        <Heading size={{ base: "sm", md: "md" }}>Frontend Mentor</Heading>
+        <Text fontSize={{ base: "xs", sm: "sm" }}>Feedback Board</Text>
       </Box>
 
       <Box p={6} bg={cardBg} borderRadius="lg">

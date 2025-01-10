@@ -37,7 +37,7 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
       <Flex align="start" gap={4} alignItems={"center"} justify={"start"}>
         <Text
           color="white"
-          fontWeight="medium"
+          fontWeight="bold"
           fontSize={{ base: "sm", sm: "lg" }}
         >
           {feedbackCount} {feedbackCount === 1 ? "Suggestion" : "Suggestions"}
@@ -50,17 +50,22 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
           color="white"
           borderColor="transparent"
           _hover={{ borderColor: "whiteAlpha.300" }}
+          fontWeight="bold"
         >
           <option value="most-upvotes">Most Upvotes</option>
           <option value="least-upvotes">Least Upvotes</option>
         </Select>
       </Flex>
       <Button
-        leftIcon={<AddIcon />}
-        colorScheme="purple"
-        size="sm"
+        leftIcon={<AddIcon fontSize={8} />}
+        bg="brand.900"
+        color="white"
+        size="xs"
         px={6}
+        py={6}
         mt={{ base: 4, sm: 0 }}
+        borderRadius={"lg"}
+        fontWeight="bold"
       >
         Add Feedback
       </Button>
