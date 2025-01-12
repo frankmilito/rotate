@@ -140,6 +140,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         placement="right"
         onClose={onClose}
         isFullHeight={false}
+        size="xs"
       >
         <DrawerOverlay />
         <DrawerContent w="auto">

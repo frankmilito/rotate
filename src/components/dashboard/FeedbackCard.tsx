@@ -32,18 +32,23 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
         _hover={{ transform: "translateY(-2px)", boxShadow: "md" }}
         transition="all 0.2s"
         justify="space-between"
-        align={{ base: "start", sm: "center" }}
-        flexDir={{ base: "column", lg: "row" }}
+        align={{ base: "start" }}
+        flexDir={{ base: "column", md: "row" }}
       >
-        <Flex gap={4}>
+        <Flex gap={4} maxW="sm">
           <Button
-            display={{ base: "none", lg: "flex" }}
+            display={{ base: "none", md: "flex" }}
             flexDir="column"
             py={{ base: 6, sm: 8 }}
             bg={upvoteBg}
             _hover={{ bg: useColorModeValue("gray.200", "gray.600") }}
+            borderRadius="xl"
           >
-            <ChevronUpIcon />
+            <ChevronUpIcon
+              color="primary.600"
+              fontWeight={"bold"}
+              fontSize={"md"}
+            />
             <Text
               fontWeight="bold"
               color={textColor}
@@ -53,7 +58,7 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
             </Text>
           </Button>
 
-          <Box flex={1}>
+          <Box>
             <Text
               fontSize={{ base: "sm", sm: "lg" }}
               fontWeight="semibold"
@@ -80,19 +85,21 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
           </Box>
         </Flex>
         <Box
-          display={{ base: "flex" }}
-          justifyContent={{ base: "space-between", lg: "end" }}
+          display={{ base: "flex", md: "none" }}
+          justifyContent={{ base: "space-between" }}
           w={"100%"}
         >
           <Button
-            display={{ base: "flex", lg: "none" }}
-            // flexDir="column"
-            py={{ base: 4, sm: 8 }}
+            py={{ base: 4, sm: 6 }}
             bg={upvoteBg}
             _hover={{ bg: useColorModeValue("gray.200", "gray.600") }}
-            borderRadius="2xl"
+            borderRadius="xl"
           >
-            <ChevronUpIcon />
+            <ChevronUpIcon
+              color="primary.600"
+              fontWeight={"bold"}
+              fontSize={"md"}
+            />
             <Text
               fontWeight="bold"
               color={textColor}
@@ -108,6 +115,12 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
             </Text>
           </Flex>
         </Box>
+        <Flex gap={2} align={"center"} display={{ base: "none", md: "flex" }}>
+          <Image src="/Path.svg" width={20} height={20} alt="comment" />
+          <Text fontWeight={"bold"} fontSize={"xs"}>
+            {feedback.comment}
+          </Text>
+        </Flex>
       </Flex>
     </Box>
   );
