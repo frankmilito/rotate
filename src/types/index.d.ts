@@ -14,4 +14,8 @@ export interface RoadmapItem {
   color: string;
 }
 
-export type SortOption = "most-upvotes" | "least-upvotes";
+export type SortOption =
+  | "most-upvotes"
+  | "least-upvotes"
+  | "least-comments"
+  | "most-comments";

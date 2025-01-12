@@ -77,10 +77,17 @@ export const FeedbackBoard: React.FC = () => {
 
   const sortedFeedback = useMemo(() => {
     return filteredFeedback.sort((a, b) => {
-      if (sortBy === "most-upvotes") {
-        return b.upvotes - a.upvotes;
-      } else {
-        return a.upvotes - b.upvotes;
+      switch (sortBy) {
+        case "most-upvotes":
+          return b.upvotes - a.upvotes;
+        case "least-upvotes":
+          return a.upvotes - b.upvotes;
+        case "most-comments":
+          return b.comment - a.comment;
+        case "least-comments":
+          return a.comment - b.comment;
+        default:
+          return 0;
       }
     });
   }, [filteredFeedback, sortBy]);
