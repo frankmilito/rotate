@@ -97,8 +97,8 @@ export const FeedbackBoard: React.FC = () => {
         <Flex justify="flex-end" mb={4}>
           <ThemeToggle />
         </Flex>
-        <Flex gap={8} direction={{ base: "column", md: "row" }}>
-          <Box w={{ base: "100%", md: "300px" }}>
+        <Flex gap={8} direction={{ base: "column", lg: "row" }}>
+          <Box w={{ base: "100%", lg: "300px" }}>
             <Sidebar selectedTag={selectedTag} onTagSelect={setSelectedTag} />
           </Box>
           <Box flex={1}>

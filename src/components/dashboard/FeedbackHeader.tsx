@@ -55,11 +55,15 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
       p={4}
       borderRadius="lg"
       justify="space-between"
-      flexDirection={{ base: "column", sm: "row" }}
+      flexDirection="row"
       mb={6}
     >
       <Flex align="start" gap={4} alignItems={"center"} justify={"start"}>
         <Text
+          display={{
+            base: "none",
+            md: "inline-block",
+          }}
           color="white"
           fontWeight="bold"
           fontSize={{ base: "sm", sm: "lg" }}
@@ -73,7 +77,6 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
             rightIcon={<ChevronDownIcon />}
             bg="transparent"
             color="white"
-            borderColor="whiteAlpha.300"
             _active={{
               bg: "transparent",
             }}
@@ -81,8 +84,10 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
               bg: "transparent",
             }}
           >
-            Sort By:{" "}
-            <Text display="inline" fontWeight={"bold"}>
+            <Text display={"inline"} fontSize={"xs"}>
+              Sort By:
+            </Text>
+            <Text display="inline" fontWeight={"bold"} fontSize={"xs"}>
               {sortLabel(sortBy)}
             </Text>
           </MenuButton>
@@ -125,11 +130,11 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
         bg="brand.900"
         color="white"
         size="xs"
-        px={6}
-        py={6}
-        mt={{ base: 4, sm: 0 }}
+        px={{ base: 4, md: 6 }}
+        py={{ base: 4, md: 6 }}
         borderRadius={"lg"}
         fontWeight="bold"
+        fontSize={"xs"}
       >
         Add Feedback
       </Button>
