@@ -48,7 +48,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <Box
           p={4}
           px={6}
-          borderRadius="lg"
+          borderRadius={{ base: "none", md: "lg" }}
           backgroundImage={
             isTabMode ? "url('Oval.svg')" : "url('bgmobile.svg')"
           }
@@ -143,10 +143,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
         size="xs"
       >
         <DrawerOverlay />
-        <DrawerContent w="auto">
+        <DrawerContent w="auto" bg="primary.100">
           <DrawerCloseButton />
-          <DrawerBody mt={5}>
-            <Box p={3} bg={cardBg} borderRadius="lg">
+          <DrawerBody mt={8}>
+            <Box p={3} bg={cardBg} borderRadius="lg" mb={4}>
               <Flex gap={2} flexWrap="wrap">
                 {tags.map((tag) => (
                   <Tag

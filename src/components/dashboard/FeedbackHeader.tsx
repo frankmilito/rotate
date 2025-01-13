@@ -55,12 +55,17 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
     <Flex
       bg={bgColor}
       p={4}
-      borderRadius="lg"
+      borderRadius={{ base: "none", md: "lg" }}
       justify="space-between"
       flexDirection="row"
       mb={6}
     >
-      <Flex align="start" gap={4} alignItems={"center"} justify={"start"}>
+      <Flex
+        align="start"
+        gap={{ base: 0, md: 4 }}
+        alignItems={"center"}
+        justify={"start"}
+      >
         <HStack>
           <Box display={{ base: "none", md: "inline-block" }}>
             <Image src="/bulb.svg" height={24} width={24} alt="light" />

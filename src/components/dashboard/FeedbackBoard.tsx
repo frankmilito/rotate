@@ -67,7 +67,7 @@ const feedbackList: Feedback[] = [
 ];
 
 export const FeedbackBoard: React.FC = () => {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = useColorModeValue("primary.100", "gray.900");
   const [selectedTag, setSelectedTag] = useState<string>("All");
   const [sortBy, setSortBy] = useState<SortOption>("most-upvotes");
 
@@ -97,7 +97,10 @@ export const FeedbackBoard: React.FC = () => {
         <Flex justify="flex-end" mb={4}>
           <ThemeToggle />
         </Flex>
-        <Flex gap={8} direction={{ base: "column", lg: "row" }}>
+        <Flex
+          gap={{ base: 0, md: 8 }}
+          direction={{ base: "column", lg: "row" }}
+        >
           <Box w={{ base: "100%", lg: "300px" }}>
             <Sidebar selectedTag={selectedTag} onTagSelect={setSelectedTag} />
           </Box>
