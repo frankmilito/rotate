@@ -32,7 +32,7 @@ export const FeedbackCard: React.FC<FeedbackCardProps> = ({ feedback }) => {
         _hover={{ transform: "translateY(-2px)", boxShadow: "md" }}
         transition="all 0.2s"
         justify="space-between"
-        align={{ base: "start" }}
+        align={{ base: "start", md: "center" }}
         flexDir={{ base: "column", md: "row" }}
       >
         <Flex gap={4} maxW="sm">

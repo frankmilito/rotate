@@ -9,6 +9,8 @@ import {
   MenuList,
   Text,
   useColorModeValue,
+  HStack,
+  Box,
 } from "@chakra-ui/react";
 import { AddIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { SortOption } from "@/types";
@@ -59,17 +61,22 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
       mb={6}
     >
       <Flex align="start" gap={4} alignItems={"center"} justify={"start"}>
-        <Text
-          display={{
-            base: "none",
-            md: "inline-block",
-          }}
-          color="white"
-          fontWeight="bold"
-          fontSize={{ base: "sm", sm: "lg" }}
-        >
-          {feedbackCount} {feedbackCount === 1 ? "Suggestion" : "Suggestions"}
-        </Text>
+        <HStack>
+          <Box display={{ base: "none", md: "inline-block" }}>
+            <Image src="/bulb.svg" height={24} width={24} alt="light" />
+          </Box>
+          <Text
+            display={{
+              base: "none",
+              md: "inline-block",
+            }}
+            color="white"
+            fontWeight="bold"
+            fontSize={{ base: "sm", sm: "lg" }}
+          >
+            {feedbackCount} {feedbackCount === 1 ? "Suggestion" : "Suggestions"}
+          </Text>
+        </HStack>
         <Menu>
           <MenuButton
             as={Button}
@@ -84,8 +91,8 @@ export const FeedbackHeader: React.FC<FeedbackHeaderProps> = ({
               bg: "transparent",
             }}
           >
-            <Text display={"inline"} fontSize={"xs"}>
-              Sort By:
+            <Text display={"inline"} fontSize={"xs"} fontWeight={"medium"}>
+              Sort By :{" "}
             </Text>
             <Text display="inline" fontWeight={"bold"} fontSize={"xs"}>
               {sortLabel(sortBy)}
