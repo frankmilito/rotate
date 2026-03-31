@@ -34,7 +34,7 @@ jobs:
             comment from the api call made by milito himself
             '
 
-         env:
+        env:
             GITHUB_TOKEN: ${{secrets.GITHUB_SECRET}}
             ORGANIZATION: ${{github.events.organization.login}}
             REPOSITORY: ${{github.events.repository.name}}
