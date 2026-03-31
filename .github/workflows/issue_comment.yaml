@@ -2,7 +2,8 @@ name: Create a comment action
 on:
   issues:
     types: [opened]
-
+permissions: 
+  issues: write
 jobs:
   comment-with-action:
     runs-on: ubuntu-latest
